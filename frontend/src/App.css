@@ -1,0 +1,303 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f7f5ff;
+  color: #292344;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background: #292344;
+  color: white;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.sidebar h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 50px;
+  color: #d8c6ff;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #ded8ef;
+  transition: 0.2s;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  background: #514276;
+  color: white;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  color: #c4b7e8;
+  font-size: 13px;
+}
+
+/* DASHBOARD */
+
+.dashboard {
+  flex: 1;
+  padding: 45px;
+  min-width: 0;
+}
+
+.dashboard-header {
+  margin-bottom: 30px;
+}
+
+.welcome {
+  color: #9272ce;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.dashboard-header h1 {
+  font-size: 34px;
+  margin: 12px 0;
+}
+
+.dashboard-header p {
+  color: #817b94;
+}
+
+/* STATS */
+
+.stats-card {
+  background: linear-gradient(135deg, #a78bfa, #8062c8);
+  color: white;
+  padding: 25px;
+  border-radius: 18px;
+  width: 220px;
+  margin-bottom: 35px;
+  box-shadow: 0 8px 20px #a78bfa33;
+}
+
+.stats-card h2 {
+  font-size: 36px;
+}
+
+.stats-card p {
+  margin-top: 5px;
+}
+
+/* ADD DREAM FORM */
+
+.add-dream {
+  background: white;
+  padding: 28px;
+  border-radius: 18px;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 5px 20px #30205a0d;
+  margin-bottom: 40px;
+}
+
+.add-dream h2 {
+  margin-bottom: 5px;
+}
+
+.add-dream input,
+.add-dream textarea,
+.add-dream select {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #e3def0;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: inherit;
+  background: #fcfbff;
+  color: #292344;
+  outline: none;
+}
+
+.add-dream input::placeholder,
+.add-dream textarea::placeholder {
+  color: #9991aa;
+  opacity: 1;
+}
+
+.add-dream input:focus,
+.add-dream textarea:focus,
+.add-dream select:focus {
+  border-color: #9878df;
+  box-shadow: 0 0 0 3px #9878df20;
+}
+
+.add-dream textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.add-dream button {
+  background: #8869d2;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.add-dream button:hover {
+  background: #7051b8;
+}
+
+/* DREAM CARDS */
+
+.section-title {
+  margin-bottom: 20px;
+}
+
+.dream-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.dream-card {
+  background: white;
+  padding: 23px;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px #30205a0d;
+  min-width: 0;
+}
+
+.dream-card-top,
+.dream-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.dream-category {
+  background: #eee8ff;
+  color: #7657b7;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.dream-card h3 {
+  margin: 22px 0 10px;
+  overflow-wrap: anywhere;
+}
+
+.dream-card p {
+  color: #817b94;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.dream-card-bottom {
+  margin-top: 25px;
+  color: #9475d5;
+  font-size: 13px;
+}
+
+.delete-btn {
+  border: none;
+  background: #fff0f0;
+  color: #e36c79;
+  padding: 9px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+}
+
+.empty-message {
+  color: #91899f;
+  margin-top: 15px;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .sidebar {
+    width: 75px;
+    padding: 20px 10px;
+  }
+
+  .sidebar h2 {
+    font-size: 0;
+    justify-content: center;
+  }
+
+  .sidebar h2 svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .nav-item {
+    font-size: 0;
+    justify-content: center;
+    padding: 12px 5px;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  .dashboard {
+    padding: 22px 15px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 26px;
+  }
+}
+
+.add-dream select option {
+  color: #292344;
+  background: white;
+}
+
+.add-dream h2 {
+  color: #493477;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.add-dream {
+  border: 1px solid #e5dcfa;
+}
